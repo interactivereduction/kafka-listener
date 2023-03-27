@@ -10,7 +10,7 @@ use rdkafka::message::Message;
 use rdkafka::ClientConfig;
 use rdkafka::error::KafkaError;
 use diesel::pg::PgConnection;
-use diesel::r2d2::{ConnectionManager, Pool, PooledConnection};
+use diesel::r2d2::{ConnectionManager, Pool};
 
 #[derive(thiserror::Error, Debug)]
 enum Error {
