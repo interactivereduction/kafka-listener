@@ -14,12 +14,12 @@ Expects multiple environment variables to be set:
 
 Expected value on detected-runs kafka message example:
 ```
-'{ "run_number": 123456, "instrument": "MARI", "experiment_title": "Super cool experiment", "experiment_number": "1220474", "users": "Dr Physics & co.", "filepath": "path/to/file/MARI0.nxs", "will_reduce": true, "good_frames": 1000000, "raw_frames": 1000001, "monitor_counts": 5892, "additional_values": { "additional_reduction_input_1": "I am an input!", "additional_reduction_input_2": "Me Too!" }}'
+{"run_number": "123456", "instrument": "MARI", "experiment_title": "Super cool experiment", "run_start": "2023-03-28T07:15:50", "run_end": "2023-03-28T07:16:50", "experiment_number": "1220474", "users": "Dr Physics & co.", "filepath": "path/to/file/MARI0.nxs", "will_reduce": true, "good_frames": 1000000, "raw_frames": 1000001, "additional_values": { "additional_reduction_input_1": "I am an input!", "additional_reduction_input_2": "Me Too!" }}
 ```
 Which as a JSON object looks like:
 ```json
 {
-  "run_number": 123456,
+  "run_number": "123456",
   "instrument": "MARI",
   "experiment_title": "Super cool experiment",
   "experiment_number": "1220474",
@@ -28,7 +28,8 @@ Which as a JSON object looks like:
   "will_reduce": true,
   "good_frames": 1000000,
   "raw_frames": 1000001,
-  "monitor_counts": 5892,
+  "run_start": "2023-03-28T07:15:50",
+  "run_end": "2023-03-28T07:16:50",
   "additional_values": {
     "additional_reduction_input_1": "I am an input!",
     "additional_reduction_input_2": "Me Too!"

@@ -9,6 +9,7 @@ use crate::types::{KafkaNewRun, KafkaCompletedRun, SQLNewRun};
 
 
 pub(crate) async fn detected_runs(message: &[u8], db_pool: Pool<ConnectionManager<PgConnection>>) -> crate::Result<()> {
+    println!("{}", format!("Message recieved: {}", std::str::from_utf8(message).unwrap()));
     let kafka_run: KafkaNewRun = from_slice(message)?;
 
     // If a reduction shouldn't happen, do not add it to the database, it is not a requested run.
